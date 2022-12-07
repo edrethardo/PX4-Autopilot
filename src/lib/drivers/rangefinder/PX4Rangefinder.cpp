@@ -81,5 +81,5 @@ void PX4Rangefinder::update(const hrt_abstime &timestamp_sample, const float dis
 	}
 
 	_distance_sensor_pub.update();
-	printf("distance_sensor: %d;%f;%d",report.timestamp,(double)report.current_distance,report.signal_quality);
+	printf("DS;%lld;%f;%d",report.timestamp,(double)report.current_distance,report.signal_quality);
 }
