@@ -131,7 +131,7 @@ void PX4Gyroscope::update(const hrt_abstime &timestamp_sample, float x, float y,
 	report.samples = 1;
 	report.timestamp = hrt_absolute_time();
 
-	printf("G;%d;%f;%f;%f",report.timestamp, (double) report.x, (double) report.y, (double) report.z);
+	printf("G;%lld;%f;%f;%f",report.timestamp, (double) report.x, (double) report.y, (double) report.z);
 
 	_sensor_pub.publish(report);
 }
