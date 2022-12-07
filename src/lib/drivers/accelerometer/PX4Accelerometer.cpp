@@ -131,7 +131,7 @@ void PX4Accelerometer::update(const hrt_abstime &timestamp_sample, float x, floa
 	report.clip_counter[2] = (fabsf(z) >= _clip_limit);
 	report.samples = 1;
 	report.timestamp = hrt_absolute_time();
-	printf("AC;%d;%f;%f;%f\n",report.timestamp, report.x, report.y, report.z);
+	printf("AC;%lld;%f;%f;%f\n",report.timestamp, (double) report.x, (double) report.y, (double) report.z);
 
 	_sensor_pub.publish(report);
 
