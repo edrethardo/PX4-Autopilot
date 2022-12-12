@@ -107,6 +107,8 @@ UavcanNode::UavcanNode(CanInitHelper *can_init, uint32_t bitrate, uavcan::ICanDr
 {
 	int res = pthread_mutex_init(&_node_mutex, nullptr);
 	printf("Starting UAVCAN node\n");
+	PX4_WARN("Starting UAVCAN node\n");
+	PX4_ERR("Starting UAVCAN node\n");
 	_can = can_init;
 	_bitrate = bitrate;
 
