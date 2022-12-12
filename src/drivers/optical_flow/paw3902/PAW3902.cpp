@@ -422,7 +422,7 @@ void PAW3902::RunImpl()
 
 						sensor_optical_flow.timestamp = hrt_absolute_time();
 						_sensor_optical_flow_pub.publish(sensor_optical_flow);
-						printf("OF;%lld;%f;%f\n",sensor_optical_flow.timestamp,(double) sensor_optical_flow.pixel_flow[0],(double) sensor_optical_flow.pixel_flow[1]);
+						printf("OF;%lld;%d;%d;%f;%f\n",sensor_optical_flow.timestamp,_mode,shutter,(double) sensor_optical_flow.pixel_flow[0],(double) sensor_optical_flow.pixel_flow[1]);
 
 						_last_publish = sensor_optical_flow.timestamp;
 					}
