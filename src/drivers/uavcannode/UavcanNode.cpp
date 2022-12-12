@@ -103,9 +103,10 @@ UavcanNode::UavcanNode(CanInitHelper *can_init, uint32_t bitrate, uavcan::ICanDr
 	_fw_update_listner(_node),
 	_param_server(_node),
 	_reset_timer(_node)
+
 {
 	int res = pthread_mutex_init(&_node_mutex, nullptr);
-
+	printf("Starting UAVCAN node\n");
 	_can = can_init;
 	_bitrate = bitrate;
 
